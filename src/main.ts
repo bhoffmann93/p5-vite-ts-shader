@@ -41,6 +41,7 @@ new p5((p: p5) => {
     postFxShader.setUniform('uTexture', b);
     postFxShader.setUniform('uResolution', [p.width * p.displayDensity(), p.height * p.displayDensity()]);
     postFxShader.setUniform('uTime', p.millis() / 1000);
+    postFxShader.setUniform('uFrame', p.frameCount);
     p.plane(p.width, p.height);
     stats.end();
   };

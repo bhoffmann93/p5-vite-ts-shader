@@ -1,6 +1,4 @@
 // Pure math utilities — safe to include in both vertex and fragment shaders.
-// Fragment-only functions (fwidth, texelFetch, texture sampling) live in utils.frag.
-// Requires: constants.frag (PI, TAU, PHI, poissonDisk[]), random.frag (hash22)
 #define HALF_PI 1.57079632679
 #define PI 3.14159265359
 #define TAU 6.28318530718
@@ -322,7 +320,6 @@ float almostUnitIdentity(float x) {
 }
 
 //https://iquilezles.org/articles/smin/
-
 //distorts everywhere
 float sminExponential(float a, float b, float k) {
     float res = exp2(-k * a) + exp2(-k * b);

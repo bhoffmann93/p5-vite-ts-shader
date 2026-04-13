@@ -19,7 +19,7 @@ void main() {
     vec2 uv = vTexCoord;
     vec3 color = texture2D(uTexture, uv).rgb;
 
-    // color = filmGrain(color, 0.1, uFrame);
-    color += (1.0 / 255.0) * hash12(gl_FragCoord.xy + fract(uTime)) - (0.5 / 255.0); //dither reduce banding
+    color = filmGrain(color, 0.1, uFrame);
+    // color += (1.0 / 255.0) * hash12(gl_FragCoord.xy + fract(uTime)) - (0.5 / 255.0); //dither reduce banding
     gl_FragColor = vec4(color, 1.0);
 }
